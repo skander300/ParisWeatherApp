@@ -229,7 +229,7 @@ extension URLSession {
     
     fileprivate func codableTask<T: Codable>(with request: Request, completion: @escaping (Result<T, NetworkError>) -> Void) -> URLSessionDataTask {
         var urlRequest = URLRequest(url: request.url!)
-        print("URl: \(request.url)")
+        print("URl: \(String(describing: request.url))")
         urlRequest.httpMethod = request.httpMethod.rawValue
         urlRequest.httpBody = request.body
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
