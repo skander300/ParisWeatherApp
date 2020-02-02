@@ -32,7 +32,7 @@ class HomeTableViewCell: UITableViewCell {
         shadowView.backgroundColor = .clear
         shadowView.layer.shadowColor = UIColor.darkGray.cgColor
         shadowView.layer.shadowOffset = CGSize.zero
-        shadowView.layer.shadowOpacity = 0.5
+        shadowView.layer.shadowOpacity = 0.3
         shadowView.layer.shadowRadius = 3
         
         container.layer.cornerRadius = 10
@@ -46,9 +46,13 @@ class HomeTableViewCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        container.backgroundColor = selected ? UIColor.gray : UIColor
+        .white
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        container.backgroundColor = highlighted ? UIColor.gray : UIColor
+        .white
     }
     
     func populate() {

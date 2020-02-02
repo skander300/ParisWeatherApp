@@ -22,12 +22,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0k-2D-tUe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="125" y="941"/>
+            <point key="canvasLocation" x="-794" y="276"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="liW-3x-Kcs">
             <objects>
-                <viewController id="TEI-Co-Zey" customClass="HomeViewController" customModule="ParisWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="TEI-Co-Zey" customClass="HomeViewController" customModule="ParisWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ard-xQ-rYt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -54,6 +54,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LO9-DB-shv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="125" y="276"/>
+        </scene>
+        <!--Forecast Details View Controller-->
+        <scene sceneID="lwa-p4-MuC">
+            <objects>
+                <viewController storyboardIdentifier="ForecastDetailsViewController" id="yhd-vD-wuP" customClass="ForecastDetailsViewController" customModule="ParisWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ElV-Yh-F5f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pl5-W0-3Ae">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Pyh-pj-mJD" firstAttribute="trailing" secondItem="Pl5-W0-3Ae" secondAttribute="trailing" id="52h-Za-Pin"/>
+                            <constraint firstItem="Pl5-W0-3Ae" firstAttribute="top" secondItem="Pyh-pj-mJD" secondAttribute="top" id="Fp5-DB-9X1"/>
+                            <constraint firstItem="Pl5-W0-3Ae" firstAttribute="leading" secondItem="ElV-Yh-F5f" secondAttribute="leading" id="XO7-Xe-7TU"/>
+                            <constraint firstAttribute="bottom" secondItem="Pl5-W0-3Ae" secondAttribute="bottom" id="fG2-9d-Aw0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pyh-pj-mJD"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Pl5-W0-3Ae" id="3bk-Cg-YGA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rCo-Iw-LC5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="933" y="276"/>
         </scene>
     </scenes>
 </document>

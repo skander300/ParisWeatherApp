@@ -21,7 +21,7 @@ extension HomeCellViewModel {
         if Calendar.current.isDateInToday(self.forecast.dt) {
             return "Today"
         } else {
-            return DateFormatter.dateFormatter.string(from: self.forecast.dt)
+            return DateFormatter.weekdayDateFormatter.string(from: self.forecast.dt)
         }
     }
     
@@ -63,6 +63,7 @@ extension NumberFormatter {
         formatter.minimumFractionDigits = 0
         return formatter
     }
+    
 }
 
 extension MeasurementFormatter {
@@ -82,9 +83,21 @@ extension MeasurementFormatter {
 }
 
 extension DateFormatter {
-    static var dateFormatter: DateFormatter {
+    static var weekdayDateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, dd MMM"
+        return formatter
+    }
+    
+    static var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        return formatter
+    }
+    
+    static var hourFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
         return formatter
     }
 }

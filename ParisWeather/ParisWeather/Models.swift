@@ -70,6 +70,11 @@ struct Forecast: Codable {
         case dt, main, weather, clouds, wind, rain, sys
         case dtTxt = "dt_txt"
     }
+    
+    
+    var dateString: String {
+        DateFormatter.dateFormatter.string(from: dt)
+    }
 }
 
 // MARK: - Clouds
@@ -210,18 +215,22 @@ extension URLSession {
         return self.dataTask(with: request) { data, response, error in
             
             guard let data = data, error == nil else {
-                completion(.failure(.domainError))
+                DispatchQueue.main.async {
+                    completion(.failure(.domainError))
+                }
                 return
             }
             
             let result = try? newJSONDecoder().decode(T.self, from: data)
             
-            if let result = result {
+            if let result = result, let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 DispatchQueue.main.async {
                     completion(.success(result))
                 }
             } else {
-                completion(.failure(.decodingError))
+                DispatchQueue.main.async {
+                    completion(.failure(.decodingError))
+                }
             }
         }
     }
