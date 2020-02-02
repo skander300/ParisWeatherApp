@@ -29,14 +29,8 @@ class HomeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        shadowView.backgroundColor = .clear
-        shadowView.layer.shadowColor = UIColor.darkGray.cgColor
-        shadowView.layer.shadowOffset = CGSize.zero
-        shadowView.layer.shadowOpacity = 0.3
-        shadowView.layer.shadowRadius = 3
-        
-        container.layer.cornerRadius = 10
-        container.layer.masksToBounds = true
+        shadowView.makeShadow()
+        container.makeRoundCorners()
         
         dateLabel.font = UIFont.boldSystemFont(ofSize: 20)
         commentLabel.font = UIFont.systemFont(ofSize: 15)

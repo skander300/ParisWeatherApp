@@ -70,3 +70,18 @@ extension UIViewController {
     }
     
 }
+
+extension UIView {
+    func makeShadow()  {
+        self.backgroundColor = .clear
+        self.layer.shadowColor = UIColor.darkGray.cgColor
+        self.layer.shadowOffset = CGSize.zero
+        self.layer.shadowOpacity = 0.3
+        self.layer.shadowRadius = 3
+    }
+    
+    func makeRoundCorners() {
+       self.layer.cornerRadius = 10
+       self.layer.masksToBounds = true
+    }
+}

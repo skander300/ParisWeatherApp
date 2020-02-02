@@ -27,15 +27,8 @@ class ForecastDetailsTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        shadowView.backgroundColor = .clear
-        shadowView.layer.shadowColor = UIColor.darkGray.cgColor
-        shadowView.layer.shadowOffset = CGSize.zero
-        shadowView.layer.shadowOpacity = 0.3
-        shadowView.layer.shadowRadius = 3
-        
-        containerView.layer.cornerRadius = 10
-        containerView.layer.masksToBounds = true
+        shadowView.makeShadow()
+        containerView.makeRoundCorners()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
